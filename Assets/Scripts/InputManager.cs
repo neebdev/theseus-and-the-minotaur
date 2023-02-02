@@ -14,14 +14,9 @@ public class InputManager : MonoBehaviour
 
 	public delegate void SwipeEvent(Vector2 dir);
 	public static event SwipeEvent OnSwipe;
-	int marks = 5;
 
 	Vector2 startPos;
 	float startTime;
-    private void Start()
-    {
-		PrintNumber();
-    }
 
     public void Update()
 	{
@@ -79,23 +74,4 @@ public class InputManager : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.LeftArrow)) OnSwipe?.Invoke(Vector2.left);
 		}
 	}
-	void PrintNumber()
-    {
-		if(marks > 80)
-        {
-			print("A");
-        }
-        else if(marks > 65)
-        {
-			print("B");
-        }
-		else if(marks > 33)
-        {
-			print("C");
-        }
-        else
-        {
-			print("F");
-        }
-    }
 }
